@@ -1,6 +1,47 @@
 <template>
-  <div>hihi</div>
+  <main>
+    <a-layout class="site-layout">
+      <a-row>
+        <a-col
+          :xs="{ span: 24 }"
+          :sm="{ span: 24 }"
+          :md="{ span: 18 }"
+          :lg="{ span: 18 }"
+          :xl="{ span: 18 }"
+          :xxl="{ span: 18 }"
+        >
+          <a-row
+            class="pt-4 pb-4 px-2"
+            :gutter="8"
+            style="margin-left: 0, margin-right: 0"
+          >
+            <Items :items="items" />
+          </a-row>
+          <div class="text-center mb-4">
+            <a-button class="btn-mindpang" size="large" @click="doMoreItem">
+              더보기
+            </a-button>
+          </div>
+        </a-col>
+        <a-col
+          :xs="{ span: 24 }"
+          :sm="{ span: 24 }"
+          :md="{ span: 6 }"
+          :lg="{ span: 6 }"
+          :xl="{ span: 6 }"
+          :xxl="{ span: 6 }"
+        >
+          <Sidebar
+            :recentlyItems="recentlyItems"
+            :popularItems="popularItems"
+          />
+        </a-col>
+      </a-row>
+    </a-layout>
+  </main>
+  <Footer />
 </template>
+
 <script setup>
 const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
