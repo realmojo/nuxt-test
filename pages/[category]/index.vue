@@ -39,7 +39,6 @@
       </a-row>
     </a-layout>
   </main>
-  <Footer />
 </template>
 
 <script setup>
@@ -50,16 +49,11 @@ const recentlyItems = ref([]);
 const popularItems = ref([]);
 const page = ref(1);
 
-const searchText = computed(() => {
-  return route.query.search;
+const category = computed(() => {
+  return route.params.category ? route.params.category : "all";
 });
 
-let queryParams = "";
-if (searchText.value) {
-  queryParams = `?search=${searchText.value}`;
-}
-
-const url = `${runtimeConfig.BASE_URL}/mind/main.php${queryParams}`;
+const url = `${runtimeConfig.BASE_URL}/mind/main.php?category=${category.value}`;
 const { data } = await useFetch(url, {
   key: "main",
   method: "get",
@@ -70,18 +64,8 @@ items.value = d.items;
 recentlyItems.value = d.recentlyItems;
 popularItems.value = d.popularItems;
 
-// const url = `/api/mind/main${queryParams}`;
-// const { data } = await useFetch(url, {
-//   key: "main",
-//   method: "get",
-// });
-
-// items.value = data._rawValue.items;
-// recentlyItems.value = data._rawValue.recentlyItems;
-// popularItems.value = data._rawValue.popularItems;
-
 const doMoreItem = async () => {
-  const url = `/api/mind/list?page=${page.value}`;
+  const url = `/api/mind/list?category=${category.value}&page=${page.value}`;
   const { data } = await useFetch(url, {
     key: "moreList",
     method: "get",
