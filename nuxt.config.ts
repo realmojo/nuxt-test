@@ -1,5 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 const title = "마인드팡 - 재미있는 무료 테스트 모음";
 const description =
   "마인드팡의 모든 테스트들은 무료로 즐길 수 있습니다. 드라마, 연예, 방송 등 다양한 테스트를 즐겨보세요.";
@@ -11,24 +9,24 @@ export default defineNuxtConfig({
       BASE_URL: "https://f5game.co.kr/api",
     },
   },
-  // modules: [
-  //   "@nuxtjs/tailwindcss",
-  //   // [
-  //   //   "@nuxtjs/google-adsense",
-  //   //   {
-  //   //     id: "ca-pub-9130836798889522",
-  //   //   },
-  //   // ],
-  // ],
-  // css: ["~/assets/css/style.css"],
-  // tailwindcss: {
-  //   cssPath: "~/assets/css/tailwind.css",
-  //   configPath: "tailwind.config",
-  //   exposeConfig: false,
-  //   injectPosition: 0,
-  //   viewer: true,
-  // },
-  // plugins: ["@/plugins/antd"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    // [
+    //   "@nuxtjs/google-adsense",
+    //   {
+    //     id: "ca-pub-9130836798889522",
+    //   },
+    // ],
+  ],
+  css: ["~/assets/css/style.css"],
+  tailwindcss: {
+    cssPath: "~/assets/css/tailwind.css",
+    configPath: "tailwind.config",
+    exposeConfig: false,
+    injectPosition: 0,
+    viewer: true,
+  },
+  plugins: ["@/plugins/antd"],
   app: {
     head: {
       title: title,
