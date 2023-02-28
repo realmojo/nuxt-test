@@ -1,6 +1,4 @@
-/love/ /love 308
-/enter/ /enter 308
-/dd/ /dd 308
-/category/*/ /category/$1 308
-/love/*/ /love/$1 308
-/enter/*/ /enter/$1 308
+/*/ /$1 308
+/category/*/ /category/* 308
+/love/*/ /love/* 308
+/enter/*/ /enter/* 308
