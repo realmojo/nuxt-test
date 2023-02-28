@@ -26,13 +26,6 @@
 
 header {
   /* height: 54px; */
-  background: rgb(28, 116, 233);
-  background: rgb(229, 186, 115);
-  background: linear-gradient(
-    90deg,
-    rgba(229, 186, 115, 1) 0%,
-    rgba(250, 234, 177, 1) 100%
-  );
   justify-content: space-between;
   width: 100%;
   z-index: 99;
@@ -180,7 +173,6 @@ main {
 }
 .test-main {
   position: relative;
-  color: white;
   height: 100% !important;
 }
 .test-main.loading {
