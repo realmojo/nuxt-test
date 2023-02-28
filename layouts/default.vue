@@ -5,7 +5,7 @@
       <div class="mindpang-menu-wrap">
         <ul class="mindpang-menu">
           <li v-for="menu in menuItems" :key="menu.key">
-            <NuxtLink
+            <a
               :href="`/${menu.key !== 'all' ? menu.key : ''}`"
               :class="`menu-item ${
                 category === menu.key ? 'menu-item-active' : ''
@@ -13,7 +13,7 @@
               target="_self"
             >
               {{ menu.title }}
-            </NuxtLink>
+            </a>
           </li>
         </ul>
       </div>
