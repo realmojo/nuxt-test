@@ -1,0 +1,4 @@
+/love/ /love 301
+/enter/ /enter 301
+/love/*/ /love/* 301
+/enter/*/ /enter/* 301
